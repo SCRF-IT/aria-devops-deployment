@@ -25,11 +25,24 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Python syntax check
+        run: |
+          python -m py_compile chat.py claude.py
+
       - name: Validate Docker Compose
         run: docker compose config
 
       - name: Build Docker image
         run: docker build -t aria-agent .
+
+      - name: Start Docker Compose
+        run: docker compose up -d
+
+      - name: Check running containers
+        run: docker ps
+
+      - name: Stop Docker Compose
+        run: docker compose down
 
       - name: Verify Docker image
         run: docker images aria-agent

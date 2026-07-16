@@ -1,0 +1,15 @@
+version: '3.8' 
+ 
+services: 
+  aria: 
+    build: . 
+    container_name: aria-assistant 
+    environment: 
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY} 
+      TAVILY_API_KEY: ${TAVILY_API_KEY} 
+    volumes: 
+      - ./config:/app/config 
+      - ./memory:/app/memory 
+    stdin_open: true 
+    tty: true 
+    restart: unless-stopped 

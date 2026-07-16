@@ -1,5 +1,17 @@
-.env 
-config/ 
-memory/ 
-__pycache__/ 
-*.pyc 
+.env
+.env.*
+config/
+memory/
+
+# Python
+__pycache__/
+*.pyc
+
+# Secrets / keys
+*.key
+*.pem
+*.secret
+credentials.json
+
+# Logs
+*.log

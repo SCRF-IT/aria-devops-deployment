@@ -15,7 +15,10 @@ USER aria
  
 VOLUME ["/app/config", "/app/memory"] 
  
-ENV OPENROUTER_API_KEY="" 
-ENV TAVILY_API_KEY="" 
+ENV OPENROUTER_API_KEY=""
+ENV TAVILY_API_KEY=""
+ENV ANTHROPIC_API_KEY=""
+ENV OPENAI_API_KEY=""
+ENV GOOGLE_API_KEY=""
  
 CMD ["python", "chat.py"] 
